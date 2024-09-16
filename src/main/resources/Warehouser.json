@@ -1,0 +1,96 @@
+{
+    "role": {
+        "Name": "Warehouser"
+    },
+    "JPASS_SETTINGS": {
+        "JPASS_SETTINGS": "H",
+        "PROJECT_CONFIGURATION": "H"
+    },
+    "JPASS_DASHBOARD": {
+        "DASHBOARD_EMPLOYEE_BLOCK_KPI": "R",
+        "DASHBOARD_TRAINING_BLOCK": "R",
+        "DASHBOARD_QUALIF_BLOCK": "R",
+        "DASHBOARD_CONSTRUCT_MACHINERY_BLOCK_KPI": "R",
+        "DASHBOARD_EQUIP_CERT_BLOCK": "R",
+        "DASHBOARD_EQUIP_MATERIAL_KPI_BLOCK": "R",
+        "DASHBOARD_DELIVERIES_BLOCK": "R",
+        "DASHBOARD_WAREHOUSING_BLOCK": "R",
+        "DASHBOARD_EQUIP_CONTROL_BLOCK": "R"
+    },
+    "EMPLOYEE": {
+        "EMPLOYEE_PERSO_DATA": "R",
+        "EMPLOYEE_QUALIF_ASSOCIATE": "R",
+        "EMPLOYEE_TRAINING_ASSOCIATE": "R",
+        "EMPLOYEE_MEDICAL_ASSOCIATE": "H",
+        "EMPLOYEE_BEHAVIOR_ASSOCIATE": "H",
+        "EMPLOYEE_VALIDATE_ASSOC": "H",
+        "EMPLOYEE_VIEW_PROJECTS": "R",
+        "EMPLOYEE_QR_CODE_SCAN_PRINT": "R",
+        "EMPLOYEE_CHECK_IN_OUT": "H"
+    },
+    "TRAINING": {
+        "TRAINING_DATA": "R",
+        "Associate multiple attendees / Massive upload of Training associations": "H"
+    },
+    "QUALIFICATION": {
+        "QUALIF_DATA": "R",
+        "TRAINING_ASSOC_MULTIPLE_ATTEND": "H"
+    },
+    "MEDICAL": {
+        "MEDICAL_DATA": "H",
+        "MEDICAL_MASSIVE_UPLOAD_ASSOC": "H"
+    },
+    "CONSTRUCTION_MACHINERY": {
+        "CM_DATA": "R",
+        "CM_ASSOC_CERTIFICATE": "R",
+        "CM_ASSOC_INSPECTION": "R",
+        "CM_ASSOC_WARNING": "R",
+        "CM_ASSOC_OPERATOR": "R",
+        "CM_ASSOC_LOCALISATION": "R",
+        "CM_ASSOC_PROJECTS": "R",
+        "CM_VALIDATE_ASSOC": "H",
+        "CM_QR_CODE_SCAN_PRINT": "R"
+    },
+    "CM_CERTIFICATE": {
+        "EQUIP_CERTS_DATA": "R",
+        "EQUIP_CERTS_MASSIVE_UPLOAD": "H"
+    },
+    "PE_CERTIFICATE": {
+        "PE_EQUIP_CERTS_DATA": "R",
+        "PE_EQUIP_CERTS_MASSIVE_UPLOAD": "H"
+    },
+    "PROCURED_EQUIP": {
+        "PE_DATA": "RW",
+        "PE_RECEIVING_INSPECTION": "RW",
+        "PE_ASSOC_INSPECTION": "H",
+        "PE_ASSOC_WARNING": "H",
+        "PE_ASSOC_CERTIFICATE": "H",
+        "PE_VALIDATE_ASSOC": "H",
+        "PE_SET_DISPLAY_LOCATION": "H",
+        "PE_QR_CODE_SCAN_PRINT": "R"
+    },
+    "DELIVERIES": {
+        "DELIVERIES_DATA": "RW",
+        "Notification to schedule (by mail)": "R"
+    },
+    "WAREHOUSING ": {
+        "WAREHOUSING_SUB_EQUIP_DATA": "H",
+        "WAREHOUSING_EQUIP_HANDOVER": "H",
+        "WAREHOUSING_ASSOC_SUB_EQUIP_INSPECTION": "H",
+        "WAREHOUSING_ASSOC_SUB_EQUIP_WARN": "H",
+        "WAREHOUSING_QR_CODE_SCAN_PRINT": "H",
+        "RECEIVING_DATA": "RW",
+        "HANDOVER": "RW"
+    },
+    "EQUIP_CONTROL": {
+        "EQUIP_CONTROL_DATA_VIZ": "H",
+        "EQUIP_CONTROL_ASSOC_INSPECTION": "H",
+        "EQUIP_CONTROL_ASSOC_WARN": "H"
+    },
+    "SITE_OPENING": {
+        "SITE_OPENING_INITIATE": "H",
+        "SITE_OPENING_FILL_EDIT": "H",
+        "SITE_OPENING_VALIDATE": "H",
+        "NOTIFICATION_EMAIL": "H"
+    }
+}
