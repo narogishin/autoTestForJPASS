@@ -1,5 +1,9 @@
 package org.example;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -9,11 +13,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class SeleniumPrivilegesCheck {
@@ -51,7 +58,7 @@ public class SeleniumPrivilegesCheck {
                 if (cssSelectorR != null && isElementDisplayed(driver, cssSelectorR)) {
                     privilegeR = true;  // Update to "R" if cssSelectorR is found
                 }
-                if (cssSelectorW != null && isElementDisplayed(driver, cssSelectorW)) {
+                if (cssSelectorW != null && isElementclickable(driver, cssSelectorW)) {
                     privilegeW = true; // Update to "RW" if cssSelectorW is found
                 }
 
@@ -78,15 +85,15 @@ public class SeleniumPrivilegesCheck {
         }
 
         // Convert the map to a JSON object and write to a file
-        ObjectNode outputJson = objectMapper.createObjectNode();
+        ObjectNode actuallyPrivilegeJson = objectMapper.createObjectNode();
         for (Map.Entry<String, ObjectNode> entry : modulePrivilegeMap.entrySet()) {
-            outputJson.set(entry.getKey(), entry.getValue());
+            actuallyPrivilegeJson.set(entry.getKey(), entry.getValue());
         }
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("output.json"), outputJson);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("actuallyPrivilege.json"), actuallyPrivilegeJson);
 
         try {
             // Call the comparePrivileges function with the paths to your JSON files
-            ObjectNode result = comparePrivileges("output.json", "src/main/resources/Contractor_HSE_manager.json");
+            ObjectNode result = comparePrivileges("actuallyPrivilege.json", "src/main/resources/Contractor_HSE_manager.json");
 
             // Print the result (for demonstration)
             System.out.println(result.toPrettyString());
@@ -99,6 +106,9 @@ public class SeleniumPrivilegesCheck {
         }
         // Close the WebDriver
         driver.quit();
+
+        // Call the generateReport function
+        generateReport("result.json", "extentReport.html");
     }
 
     // Utility method to check if an element is displayed
@@ -107,6 +117,17 @@ public class SeleniumPrivilegesCheck {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             WebElement element = driver.findElement(By.cssSelector(cssSelector));
             return element.isDisplayed();
+        } catch (Exception e) {
+            return false;  // Return false if the element is not found or not displayed
+        }
+    }
+
+    // Utility method to check if an element is displayed
+    private static boolean isElementclickable(WebDriver driver, String cssSelector) {
+        try {
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+            WebElement element = driver.findElement(By.cssSelector(cssSelector));
+            return element.isEnabled();
         } catch (Exception e) {
             return false;  // Return false if the element is not found or not displayed
         }
@@ -123,11 +144,11 @@ public class SeleniumPrivilegesCheck {
         }
     }
 
-    // Function to compare privileges between output.json and Contractor_HSE_manager.json
-    public static ObjectNode comparePrivileges(String outputFilePath, String contractorFilePath) throws IOException {
+    // Function to compare privileges between actuallyPrivilege.json and Contractor_HSE_manager.json
+    public static ObjectNode comparePrivileges(String actuallyPrivilegeFilePath, String contractorFilePath) throws IOException {
         // Load the two JSON files
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode outputJson = mapper.readTree(new File(outputFilePath));
+        JsonNode actuallyPrivilegeJson = mapper.readTree(new File(actuallyPrivilegeFilePath));
         JsonNode contractorHseManagerJson = mapper.readTree(new File(contractorFilePath));
 
         // Create a result object to store the comparison
@@ -152,15 +173,15 @@ public class SeleniumPrivilegesCheck {
                 String featureCode = featureEntry.getKey();
                 String contractorPrivilege = featureEntry.getValue().asText();
 
-                // Get the privilege from output.json if the featureCode exists
-                String outputPrivilege = getPrivilege(outputJson, moduleCode, featureCode);
+                // Get the privilege from actuallyPrivilege.json if the featureCode exists
+                String actuallyPrivilege = getPrivilege(actuallyPrivilegeJson, moduleCode, featureCode);
 
                 // Compare the privileges between the two files
-                if (outputPrivilege != null) {
-                    boolean isMatch = outputPrivilege.equals(contractorPrivilege);
+                if (actuallyPrivilege != null) {
+                    boolean isMatch = actuallyPrivilege.equals(contractorPrivilege);
                     moduleResult.put(featureCode, isMatch);
                 }
-                // If the featureCode is not found in output.json, do not add it to the result
+                // If the featureCode is not found in actuallyPrivilege.json, do not add it to the result
             }
 
             // Add the module result to the resultJson only if it contains features
@@ -172,12 +193,57 @@ public class SeleniumPrivilegesCheck {
         return resultJson; // Return the result object
     }
 
-    // Helper method to get privilege from output.json
-    private static String getPrivilege(JsonNode outputJson, String moduleCode, String featureCode) {
-        if (outputJson.has(moduleCode) && outputJson.get(moduleCode).has(featureCode)) {
-            return outputJson.get(moduleCode).get(featureCode).asText();
+    // Helper method to get privilege from actuallyPrivilege.json
+    private static String getPrivilege(JsonNode actuallyPrivilegeJson, String moduleCode, String featureCode) {
+        if (actuallyPrivilegeJson.has(moduleCode) && actuallyPrivilegeJson.get(moduleCode).has(featureCode)) {
+            return actuallyPrivilegeJson.get(moduleCode).get(featureCode).asText();
         }
         return null; // Return null if not found
     }
+
+
+    // Function to generate the Extent report
+    public static void generateReport(String jsonFilePath, String reportFilePath) {
+        // Configure ExtentReports
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(reportFilePath);
+        ExtentReports extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
+
+        // Read JSON file
+        ObjectMapper mapper = new ObjectMapper();
+        File jsonFile = new File(jsonFilePath);
+        ObjectNode jsonNode;
+
+        try {
+            jsonNode = (ObjectNode) mapper.readTree(jsonFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        // Iterate through JSON data and create report
+        Iterator<Map.Entry<String, com.fasterxml.jackson.databind.JsonNode>> fields = jsonNode.fields();
+        while (fields.hasNext()) {
+            Map.Entry<String, com.fasterxml.jackson.databind.JsonNode> field = fields.next();
+            String elementName = field.getKey();
+            String privilege = field.getValue().fieldNames().next();
+            String status = field.getValue().get(privilege).asText();
+
+            // Create a test for each element
+            ExtentTest test = extent.createTest(elementName);
+            test.info("Privilege: " + privilege);
+            if ("true".equalsIgnoreCase(status)) {
+                test.pass("Element is displayed");
+            } else {
+                test.fail("Element is not displayed");
+            }
+        }
+
+        // Flush the report
+        extent.flush();
+        System.out.println("Extent report generated successfully!");
+    }
+
+
 }
 
