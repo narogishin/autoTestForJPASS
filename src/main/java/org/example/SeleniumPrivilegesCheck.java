@@ -3,7 +3,6 @@ package org.example;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -14,10 +13,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
 
+import java.awt.*;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.time.Duration;
 import java.util.HashMap;
@@ -27,16 +25,48 @@ public class SeleniumPrivilegesCheck {
 
     public static void main(String[] args) throws IOException {
         // Set up Selenium WebDriver
+        WebDriver driver = setupWebDriver();
+        driver.get("https://jpass.jesagroup.com/projects/131/jpass");
+
+        try {
+            // Call the processPrivileges function with paths to input/output files
+            processPrivileges(driver, "src/main/resources/cssSelectors/cssSelector.json", "actuallyPrivilege.json");
+
+            // Call the comparePrivileges function with the paths to your JSON files
+            ObjectNode result = comparePrivileges("actuallyPrivilege.json", "src/main/resources/Contractor_HSE_manager.json");
+
+            // Print the result (for demonstration)
+            System.out.println(result.toPrettyString());
+
+            // Save the result to a file
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("result.json"), result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Close the WebDriver
+        driver.quit();
+
+        // Call the generateReport function
+        generateReport("result.json", "extentReport.html");
+
+        openHtmlFile("extentReport.html");
+    }
+
+    private static WebDriver setupWebDriver() {
         EdgeOptions options = new EdgeOptions();
         options.addArguments("user-data-dir=C:\\Users\\hp\\AppData\\Local\\Microsoft\\Edge\\TempUserData");
         options.addArguments("profile-directory=Default");
         WebDriver driver = new EdgeDriver(options);
         driver.manage().window().maximize();
-        driver.get("https://jpass.jesagroup.com/projects/131/jpass");
+        return driver;
+    }
 
+    public static void processPrivileges(WebDriver driver, String jsonFilePath, String outputFilePath) throws IOException {
         // Load JSON file
         ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode rootNode = objectMapper.readTree(new File("C:\\Users\\hp\\Downloads\\autotest\\src\\main\\resources\\cssSelectors\\cssSelector.json"));
+        JsonNode rootNode = objectMapper.readTree(new File(jsonFilePath));
 
         // Create a map to store the output
         Map<String, ObjectNode> modulePrivilegeMap = new HashMap<>();
@@ -58,26 +88,26 @@ public class SeleniumPrivilegesCheck {
                 if (cssSelectorR != null && isElementDisplayed(driver, cssSelectorR)) {
                     privilegeR = true;  // Update to "R" if cssSelectorR is found
                 }
-                if (cssSelectorW != null && isElementclickable(driver, cssSelectorW)) {
+                if (cssSelectorW != null && isElementClickable(driver, cssSelectorW)) {
                     privilegeW = true; // Update to "RW" if cssSelectorW is found
                 }
-
 
                 String clickOnKey = "clickOn" + clickIndex;
                 if (featureNode.has(clickOnKey)) {
                     String clickSelector = featureNode.get(clickOnKey).asText();
                     clickElement(driver, clickSelector);
-
                 } else {
                     break; // Exit loop when no more clickOn keys are found
                 }
                 clickIndex++;
             }
 
-            String privilege = "H";
-            if(privilegeR) privilege = "R";
-            if(privilegeW) privilege = "W";
-            if(privilegeR && privilegeW ) privilege = "RW";
+            // Determine privilege
+            String privilege = "H";  // Default privilege is hidden ("H")
+            if (privilegeR) privilege = "R";
+            if (privilegeW) privilege = "W";
+            if (privilegeR && privilegeW) privilege = "RW";
+
             // Add the result to the module's ObjectNode
             ObjectNode moduleNode = modulePrivilegeMap.getOrDefault(moduleCode, objectMapper.createObjectNode());
             moduleNode.put(featureCode, privilege);
@@ -89,26 +119,8 @@ public class SeleniumPrivilegesCheck {
         for (Map.Entry<String, ObjectNode> entry : modulePrivilegeMap.entrySet()) {
             actuallyPrivilegeJson.set(entry.getKey(), entry.getValue());
         }
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("actuallyPrivilege.json"), actuallyPrivilegeJson);
 
-        try {
-            // Call the comparePrivileges function with the paths to your JSON files
-            ObjectNode result = comparePrivileges("actuallyPrivilege.json", "src/main/resources/Contractor_HSE_manager.json");
-
-            // Print the result (for demonstration)
-            System.out.println(result.toPrettyString());
-
-            // Save the result to a file
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.writerWithDefaultPrettyPrinter().writeValue(new File("result.json"), result);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        // Close the WebDriver
-        driver.quit();
-
-        // Call the generateReport function
-        generateReport("result.json", "extentReport.html");
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(outputFilePath), actuallyPrivilegeJson);
     }
 
     // Utility method to check if an element is displayed
@@ -123,7 +135,7 @@ public class SeleniumPrivilegesCheck {
     }
 
     // Utility method to check if an element is displayed
-    private static boolean isElementclickable(WebDriver driver, String cssSelector) {
+    private static boolean isElementClickable(WebDriver driver, String cssSelector) {
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
             WebElement element = driver.findElement(By.cssSelector(cssSelector));
@@ -242,6 +254,26 @@ public class SeleniumPrivilegesCheck {
         // Flush the report
         extent.flush();
         System.out.println("Extent report generated successfully!");
+    }
+
+    // Function to open the generated HTML report
+    public static void openHtmlFile(String filePath) {
+        try {
+            File htmlFile = new File(filePath);
+
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                if (htmlFile.exists()) {
+                    desktop.browse(htmlFile.toURI());  // Opens in the default browser
+                } else {
+                    System.out.println("File does not exist: " + filePath);
+                }
+            } else {
+                System.out.println("Desktop is not supported on this system.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
