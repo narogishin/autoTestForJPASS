@@ -65,9 +65,9 @@
       "clickOn1": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(1) > div",
       "clickOn2": "#app > div > div > div.Wrapper-sc-1z0xtuv-0.ehtRye > div.listEmploye > div.contentListEmploye.contentListEmployeFiltered > div:nth-child(3)",
       "clickOn3": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > span",
-      "cssSelectorR": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll",
-      "cssSelectorW": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > div > ul > li:nth-child(2)",
-      "cssSelectorD": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > div > ul > li:nth-child(4)",
+      "xpathR": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]",
+      "xpathW": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[1]",
+      "xpathD": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[3]",
       "clickOff1": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > div > ul > button"
     },
     {
@@ -75,7 +75,6 @@
       "moduleCode": "EMPLOYEE",
       "clickOn1":"body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1) > button",
       "cssSelectorR": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1)",
-      "": null,
       "cssSelectorW": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div",
       "clickOff1": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1) > button"
     },
