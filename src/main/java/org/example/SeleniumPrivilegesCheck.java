@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.io.File;
@@ -20,6 +22,7 @@ import java.util.Iterator;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class SeleniumPrivilegesCheck {
 
@@ -63,6 +66,8 @@ public class SeleniumPrivilegesCheck {
         return driver;
     }
 
+
+    // TODO : Optimize the following method by reducing the nests
     public static void processPrivileges(WebDriver driver, String jsonFilePath, String outputFilePath) throws IOException {
         // Load JSON file
         ObjectMapper objectMapper = new ObjectMapper();
@@ -77,36 +82,51 @@ public class SeleniumPrivilegesCheck {
             String moduleCode = featureNode.get("moduleCode").asText();
             String cssSelectorR = featureNode.has("cssSelectorR") ? featureNode.get("cssSelectorR").asText() : null;
             String cssSelectorW = featureNode.has("cssSelectorW") ? featureNode.get("cssSelectorW").asText() : null;
+            String cssSelectorD = featureNode.has("cssSelectorD") ? featureNode.get("cssSelectorD").asText() : null;
 
-            boolean privilegeR = false;
-            boolean privilegeW = false;
+            String xpathR = featureNode.has("xpathR") ? featureNode.get("xpathR").asText() : null;
+            String xpathW = featureNode.has("xpathW") ? featureNode.get("xpathW").asText() : null;
+            String xpathD = featureNode.has("xpathD") ? featureNode.get("xpathD").asText() : null;
 
             // Dynamic handling of clickOn keys
-            int clickIndex = 1;
+            int clickOnIndex = 1;
+            int clickOffIndex = 1;
+
             while (true) {
                 // Check visibility
-                if (cssSelectorR != null && isElementDisplayed(driver, cssSelectorR)) {
-                    privilegeR = true;  // Update to "R" if cssSelectorR is found
-                }
-                if (cssSelectorW != null && isElementClickable(driver, cssSelectorW)) {
-                    privilegeW = true; // Update to "RW" if cssSelectorW is found
-                }
-
-                String clickOnKey = "clickOn" + clickIndex;
+                String clickOnKey = "clickOn" + clickOnIndex;
                 if (featureNode.has(clickOnKey)) {
                     String clickSelector = featureNode.get(clickOnKey).asText();
-                    clickElement(driver, clickSelector);
+                    clickElement(driver, clickSelector, true); // TEMPORARY: to check is selectors won't cause issues on clicking elements
                 } else {
                     break; // Exit loop when no more clickOn keys are found
                 }
-                clickIndex++;
+                clickOnIndex++;
+            }
+
+            boolean privilegeR = (cssSelectorR != null || xpathR != null) && isElementDisplayed(driver, cssSelectorR, cssSelectorR != null);
+            boolean privilegeW = (cssSelectorW != null || xpathW != null) && isElementClickable(driver, cssSelectorW, cssSelectorW != null);
+            boolean privilegeD = (cssSelectorD != null || xpathD != null) && isElementClickable(driver, cssSelectorD, cssSelectorD != null);
+
+            while (true) {
+
+                String clickOffKey = "clickOff" + clickOffIndex;
+                if (featureNode.has(clickOffKey)) {
+                    String clickSelector = featureNode.get(clickOffKey).asText();
+                    clickElement(driver, clickSelector, true); // TEMPORARY: to check is selectors won't cause issues on clicking elements
+                } else {
+                    break; // Exit loop when no more clickOn keys are found
+                }
+                clickOffIndex++;
             }
 
             // Determine privilege
             String privilege = "H";  // Default privilege is hidden ("H")
             if (privilegeR) privilege = "R";
-            if (privilegeW) privilege = "W";
+//            if (privilegeW) privilege = "W";
+//            if (privilegeD) privilege = "D";
             if (privilegeR && privilegeW) privilege = "RW";
+            if (privilegeR && privilegeW && privilegeD) privilege = "RWD";
 
             // Add the result to the module's ObjectNode
             ObjectNode moduleNode = modulePrivilegeMap.getOrDefault(moduleCode, objectMapper.createObjectNode());
@@ -124,21 +144,26 @@ public class SeleniumPrivilegesCheck {
     }
 
     // Utility method to check if an element is displayed
-    private static boolean isElementDisplayed(WebDriver driver, String cssSelector) {
+    private static boolean isElementDisplayed(WebDriver driver, String cssSelector, boolean is_selector) {
         try {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-            WebElement element = driver.findElement(By.cssSelector(cssSelector));
+//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
+            wait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed();
         } catch (Exception e) {
             return false;  // Return false if the element is not found or not displayed
         }
     }
 
-    // Utility method to check if an element is displayed
-    private static boolean isElementClickable(WebDriver driver, String cssSelector) {
+//     Utility method to check if an element is displayed
+    private static boolean isElementClickable(WebDriver driver, String cssSelector, boolean is_selector) {
         try {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-            WebElement element = driver.findElement(By.cssSelector(cssSelector));
+//            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+//            wait.until(ExpectedConditions.visibilityOf(element));
+            wait.until(ExpectedConditions.elementToBeClickable(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector)));
+            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
             return element.isEnabled();
         } catch (Exception e) {
             return false;  // Return false if the element is not found or not displayed
@@ -146,13 +171,16 @@ public class SeleniumPrivilegesCheck {
     }
 
     // Utility method to click on an element
-    private static void clickElement(WebDriver driver, String cssSelector) {
+    private static void clickElement(WebDriver driver, String cssSelector, boolean is_selector) {
         try {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-            WebElement element = driver.findElement(By.cssSelector(cssSelector));
+//            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector)));
+            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
             element.click();
         } catch (Exception e) {
             System.out.println("Element not found or not clickable: " + cssSelector);
+//            System.out.println(e.toString());
         }
     }
 
@@ -275,7 +303,4 @@ public class SeleniumPrivilegesCheck {
             e.printStackTrace();
         }
     }
-
-
 }
-

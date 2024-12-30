@@ -1,0 +1,414 @@
+{
+    "role": {
+        "id": 29,
+        "code": "CONTRACTOR_HSE_MANAGER",
+        "label": "Contractor HSE management",
+        "externalUsers": false
+    },
+    "profile": {
+        "id": 34,
+        "name": "Contractor HSE manager",
+        "code": "CONTRACTOR_HSE_MANAGER",
+        "description": "Contractor HSE manager",
+        "customized": false,
+        "forExternalUsers": true,
+        "forClient": false,
+        "forContractor": true
+    },
+    "featurePrivilegeList": [{
+            "featureCode": "JPASS_SETTINGS",
+            "moduleCode": "JPASS_SETTINGS",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_EMPLOYEE_BLOCK_KPI",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_TRAINING_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_QUALIF_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_CONSTRUCT_MACHINERY_BLOCK_KPI",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_EQUIP_CERT_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_EQUIP_MATERIAL_KPI_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_DELIVERIES_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_WAREHOUSING_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DASHBOARD_EQUIP_CONTROL_BLOCK",
+            "moduleCode": "JPASS_DASHBOARD",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_PERSO_DATA",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_QUALIF_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_TRAINING_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_MEDICAL_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_BEHAVIOR_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EMPLOYEE_QR_CODE_SCAN_PRINT",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "TRAINING_DATA",
+            "moduleCode": "TRAINING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "QUALIF_DATA",
+            "moduleCode": "QUALIFICATION",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "MEDICAL_MASSIVE_UPLOAD_ASSOC",
+            "moduleCode": "MEDICAL",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_DATA",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_ASSOC_CERTIFICATE",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_ASSOC_INSPECTION",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_ASSOC_WARNING",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_ASSOC_OPERATOR",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_ASSOC_LOCALISATION",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "CM_QR_CODE_SCAN_PRINT",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EQUIP_CERTS_DATA",
+            "moduleCode": "CM_CERTIFICATE",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_DATA",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_RECEIVING_INSPECTION",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_ASSOC_INSPECTION",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_ASSOC_WARNING",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_ASSOC_CERTIFICATE",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_SET_DISPLAY_LOCATION",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "PE_QR_CODE_SCAN_PRINT",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "DELIVERIES_DATA",
+            "moduleCode": "DELIVERIES",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "WAREHOUSING_SUB_EQUIP_DATA",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "WAREHOUSING_EQUIP_HANDOVER",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "WAREHOUSING_ASSOC_SUB_EQUIP_INSPECTION",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "WAREHOUSING_ASSOC_SUB_EQUIP_WARN",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "WAREHOUSING_QR_CODE_SCAN_PRINT",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EQUIP_CONTROL_DATA_VIZ",
+            "moduleCode": "EQUIP_CONTROL",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EQUIP_CONTROL_ASSOC_INSPECTION",
+            "moduleCode": "EQUIP_CONTROL",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "EQUIP_CONTROL_ASSOC_WARN",
+            "moduleCode": "EQUIP_CONTROL",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "SITE_OPENING_INITIATE",
+            "moduleCode": "SITE_OPENING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "SITE_OPENING_FILL_EDIT",
+            "moduleCode": "SITE_OPENING",
+            "privilegeCode": "R"
+        },
+        {
+            "featureCode": "JPASS_SETTINGS",
+            "moduleCode": "JPASS_SETTINGS",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_PERSO_DATA",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_QUALIF_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_TRAINING_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_MEDICAL_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_BEHAVIOR_ASSOCIATE",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "TRAINING_ASSOC_MULTIPLE_ATTEND",
+            "moduleCode": "TRAINING",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "QUALIF_MASSIVE_UPLOAD_ASSOC",
+            "moduleCode": "QUALIFICATION",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "MEDICAL_DATA",
+            "moduleCode": "MEDICAL",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "MEDICAL_MASSIVE_UPLOAD_ASSOC",
+            "moduleCode": "MEDICAL",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_DATA",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_ASSOC_CERTIFICATE",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_ASSOC_INSPECTION",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_ASSOC_WARNING",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_ASSOC_OPERATOR",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "CM_ASSOC_LOCALISATION",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EQUIP_CERTS_MASSIVE_UPLOAD",
+            "moduleCode": "CM_CERTIFICATE",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "DELIVERIES_DATA",
+            "moduleCode": "DELIVERIES",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "WAREHOUSING_SUB_EQUIP_DATA",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "WAREHOUSING_EQUIP_HANDOVER",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "SITE_OPENING_FILL_EDIT",
+            "moduleCode": "SITE_OPENING",
+            "privilegeCode": "W"
+        },
+        {
+            "featureCode": "EMPLOYEE_VALIDATE_ASSOC",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "EMPLOYEE_VIEW_PROJECTS",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "EMPLOYEE_CHECK_IN_OUT",
+            "moduleCode": "EMPLOYEE",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "CM_ASSOC_PROJECTS",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "CM_VALIDATE_ASSOC",
+            "moduleCode": "CONSTRUCTION_MACHINERY",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "PE_EQUIP_CERTS_DATA",
+            "moduleCode": "PE_CERTIFICATE",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "PE_EQUIP_CERTS_MASSIVE_UPLOAD",
+            "moduleCode": "PE_CERTIFICATE",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "PE_VALIDATE_ASSOC",
+            "moduleCode": "PROCURED_EQUIP",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "SITE_OPENING_VALIDATE",
+            "moduleCode": "SITE_OPENING",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "NOTIFICATION_EMAIL",
+            "moduleCode": "SITE_OPENING",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "PROJECT_CONFIGURATION",
+            "moduleCode": "JPASS_SETTINGS",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "RECEIVING_DATA",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "H"
+        },
+        {
+            "featureCode": "HANDOVER",
+            "moduleCode": "WAREHOUSING",
+            "privilegeCode": "H"
+        }
+    ]
+}

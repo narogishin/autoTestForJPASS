@@ -15,21 +15,21 @@
     "DASHBOARD_EQUIP_CONTROL_BLOCK" : true
   },
   "EMPLOYEE" : {
-    "EMPLOYEE_PERSO_DATA" : true,
-    "EMPLOYEE_QUALIF_ASSOCIATE" : true,
-    "EMPLOYEE_TRAINING_ASSOCIATE" : true,
-    "EMPLOYEE_MEDICAL_ASSOCIATE" : true,
-    "EMPLOYEE_BEHAVIOR_ASSOCIATE" : true,
-    "EMPLOYEE_VALIDATE_ASSOC" : false,
-    "EMPLOYEE_VIEW_PROJECTS" : false,
-    "EMPLOYEE_QR_CODE_SCAN_PRINT" : true,
+    "EMPLOYEE_PERSO_DATA" : false,
+    "EMPLOYEE_QUALIF_ASSOCIATE" : false,
+    "EMPLOYEE_TRAINING_ASSOCIATE" : false,
+    "EMPLOYEE_MEDICAL_ASSOCIATE" : false,
+    "EMPLOYEE_BEHAVIOR_ASSOCIATE" : false,
+    "EMPLOYEE_VALIDATE_ASSOC" : true,
+    "EMPLOYEE_VIEW_PROJECTS" : true,
+    "EMPLOYEE_QR_CODE_SCAN_PRINT" : false,
     "EMPLOYEE_CHECK_IN_OUT" : true
   },
   "TRAINING" : {
     "TRAINING_DATA" : false
   },
   "QUALIFICATION" : {
-    "QUALIF_DATA" : true
+    "QUALIF_DATA" : false
   },
   "MEDICAL" : {
     "MEDICAL_DATA" : false,
@@ -47,22 +47,22 @@
     "CM_QR_CODE_SCAN_PRINT" : false
   },
   "CM_CERTIFICATE" : {
-    "EQUIP_CERTS_DATA" : true,
-    "EQUIP_CERTS_MASSIVE_UPLOAD" : true
+    "EQUIP_CERTS_DATA" : false,
+    "EQUIP_CERTS_MASSIVE_UPLOAD" : false
   },
   "PE_CERTIFICATE" : {
     "PE_EQUIP_CERTS_DATA" : true,
     "PE_EQUIP_CERTS_MASSIVE_UPLOAD" : true
   },
   "PROCURED_EQUIP" : {
-    "PE_DATA" : true,
-    "PE_RECEIVING_INSPECTION" : true,
-    "PE_ASSOC_INSPECTION" : true,
-    "PE_ASSOC_WARNING" : true,
-    "PE_ASSOC_CERTIFICATE" : true,
+    "PE_DATA" : false,
+    "PE_RECEIVING_INSPECTION" : false,
+    "PE_ASSOC_INSPECTION" : false,
+    "PE_ASSOC_WARNING" : false,
+    "PE_ASSOC_CERTIFICATE" : false,
     "PE_VALIDATE_ASSOC" : true,
-    "PE_SET_DISPLAY_LOCATION" : true,
-    "PE_QR_CODE_SCAN_PRINT" : true
+    "PE_SET_DISPLAY_LOCATION" : false,
+    "PE_QR_CODE_SCAN_PRINT" : false
   },
   "DELIVERIES" : {
     "DELIVERIES_DATA" : false
