@@ -9,11 +9,6 @@
       "clickOff1": "#app > div > div > header > div > div.retourDashboard > button"
     },
     {
-      "featureCode": "PROJECT_CONFIGURATION",
-      "moduleCode": "JPASS_SETTINGS",
-      "cssSelectorR": ""
-    },
-    {
       "featureCode": "DASHBOARD_EMPLOYEE_BLOCK_KPI",
       "moduleCode": "JPASS_DASHBOARD",
       "cssSelectorR": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(1) > div"
@@ -64,339 +59,30 @@
       "moduleCode": "EMPLOYEE",
       "clickOn1": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(1) > div",
       "clickOn2": "#app > div > div > div.Wrapper-sc-1z0xtuv-0.ehtRye > div.listEmploye > div.contentListEmploye.contentListEmployeFiltered > div:nth-child(3)",
-      "clickOn3": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > span",
-      "xpathR": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]",
-      "xpathW": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[1]",
-      "xpathD": "/html/body/div[8]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[3]",
-      "clickOff1": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div.titleMenu > div > ul > button"
+      "clickOn3": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[1]/div[1]/span",
+      "xpathR": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[1]",
+      "xpathW": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[1]",
+      "xpathD": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/ul/li[3]"
     },
     {
       "featureCode": "EMPLOYEE_QUALIF_ASSOCIATE",
       "moduleCode": "EMPLOYEE",
-      "clickOn1":"body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div",
-      "clickOff1": "body > div:nth-child(23) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(1) > div:nth-child(1) > button"
+      "clickOn1":"/html/body/div[6]/div/div/div/div[1]/div[2]/div[3]/div[1]/div[1]/button",
+      "xpathR": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[3]/div[1]/div[1]",
+      "xpathW": "/html/body/div[6]/div/div/div/div[1]/div[2]/div[3]/div[1]/div[2]/div/div"
     },
     {
       "featureCode": "EMPLOYEE_TRAINING_ASSOCIATE",
       "moduleCode": "EMPLOYEE",
       "clickOn1":"body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(2) > div:nth-child(1) > button",
       "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(2) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div > div",
-      "clickOff1": ""
+      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div > div"
     },
     {
       "featureCode": "EMPLOYEE_MEDICAL_ASSOCIATE",
       "moduleCode": "EMPLOYEE",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(3) > div:nth-child(1)",
       "clickOn1":"body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(3) > div:nth-child(1) > button",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div > div",
-      "clickOff1": ""
-    },
-    {
-      "featureCode": "EMPLOYEE_BEHAVIOR_ASSOCIATE",
-      "moduleCode": "EMPLOYEE",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(4) > div:nth-child(1)",
-      "clickOn1":"body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(4) > div:nth-child(1) > button",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div > div",
-      "clickOff1": ""
-    },
-    {
-      "featureCode": "EMPLOYEE_QR_CODE_SCAN_PRINT",
-      "moduleCode": "EMPLOYEE",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div:nth-child(10)"
-    },
-    {
-      "featureCode": "EMPLOYEE_VIEW_PROJECTS",
-      "moduleCode": "EMPLOYEE",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.blocDescktop.EmployeInfos.UseScroll > div:nth-child(8)"
-    },
-    {
-      "featureCode": "EMPLOYEE_CHECK_IN_OUT",
-      "moduleCode": "EMPLOYEE",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "EMPLOYEE_VALIDATE_ASSOC",
-      "moduleCode": "EMPLOYEE",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.ModelbtnClose",
-      "clickOn2":"#app > div > div > div.Wrapper-sc-1z0xtuv-0.ehtRye > div.listEmploye > div.topListEmploye.fullwidth.mb-15 > div.btnTopAction > div > div > button",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1z0xtuv-0.ehtRye > div.listEmploye > div.topListEmploye.fullwidth.mb-15 > div.btnTopAction > div > div > span > div > form > div:nth-child(1)",
-      "clickOff1":"",
-      "clickOff2": "#app > div > div > header > div > div.retourDashboard > button"
-    },
-    {
-      "featureCode": "TRAINING_DATA",
-      "moduleCode": "TRAINING",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassLeft > a:nth-child(4)",
-      "cssSelectorR": "#app > div > div > div.Wrapper-zp0lek-0.fWGKVQ > div > div.contentListEmploye > div.trainingList > div:nth-child(3)",
-      "clickOff1": ""
-    },
-    {
-      "featureCode": "TRAINING_ASSOC_MULTIPLE_ATTEND",
-      "moduleCode": "TRAINING",
-      "clickOn1": "#app > div > div > div.Wrapper-zp0lek-0.fWGKVQ > div > div.topListEmploye > div.btnTopAction > button",
-      "cssSelectorW": "#app > div > div > div.Wrapper-zp0lek-0.fWGKVQ > div > div.topListEmploye > div.blocOption.active > ul > li:nth-child(3)"
-    },
-    {
-      "featureCode": "QUALIF_DATA",
-      "moduleCode": "QUALIFICATION",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassLeft > a:nth-child(1)",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.contentListEmploye.certificateList > div:nth-child(2)"
-    },
-    {
-      "featureCode": "QUALIF_MASSIVE_UPLOAD_ASSOC",
-      "moduleCode": "QUALIFICATION",
-      "clickOn1": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.btnTopAction > button",
-      "cssSelectorW": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.blocOption.active > ul > li"
-    },
-    {
-      "featureCode": "MEDICAL_MASSIVE_UPLOAD_ASSOC",
-      "moduleCode": "MEDICAL",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassLeft > a:nth-child(7)",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.blocOption.active > ul > li",
-      "cssSelectorW": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.blocOption.active > ul > li"
-    },
-    {
-      "featureCode": "MEDICAL_DATA",
-      "moduleCode": "MEDICAL",
-      "cssSelectorW": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.contentListEmploye.certificateList > div.btnAjouter"
-    },
-    {
-      "featureCode": "CM_DATA",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(2)",
-      "clickOn3": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(2)",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery > div > div.coordination.active.blocDescktop",
-      "clickOn4": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery > div > div.coordination.active.blocDescktop > div.machineryTitle > span",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery > div > div.coordination.active.blocDescktop > div.machineryTitle > div > ul > li:nth-child(2)"
-
-    },
-    {
-      "featureCode": "CM_ASSOC_CERTIFICATE",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div > div"
-
-    },
-    {
-      "featureCode": "CM_ASSOC_INSPECTION",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div > div"
-
-    },
-    {
-      "featureCode": "CM_ASSOC_WARNING",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(4) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(4) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div > div"
-    },
-    {
-      "featureCode": "CM_ASSOC_OPERATOR",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div > div"
-    },
-    {
-      "featureCode": "CM_ASSOC_LOCALISATION",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(6) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(6) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div > div"
-    },
-    {
-      "featureCode": "CM_QR_CODE_SCAN_PRINT",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery > div > div.coordination.active.blocDescktop > div:nth-child(9)"
-    },
-    {
-      "featureCode": "CM_ASSOC_PROJECTS",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery > div > div.coordination.active.blocDescktop > div:nth-child(7)"
-    },
-    {
-      "featureCode": "CM_VALIDATE_ASSOC",
-      "moduleCode": "CONSTRUCTION_MACHINERY",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "EQUIP_CERTS_DATA",
-      "moduleCode": "CM_CERTIFICATE",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.ModelbtnClose",
-      "clickOn2": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn3": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassCenter > div > div.botBlocCertificate > a.lienTitre",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.contentListEmploye.certificateList > div:nth-child(2)"
-    },
-    {
-      "featureCode": "EQUIP_CERTS_MASSIVE_UPLOAD",
-      "moduleCode": "CM_CERTIFICATE",
-      "clickOn1": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.btnTopAction > button",
-      "cssSelectorW": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.blocOption.active > ul > li"
-    },
-    {
-      "featureCode": "PE_DATA",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.Wrapper-sc-1dsuogb-0.quHye > div > a:nth-child(3)",
-      "clickOn3": "#app > div > div > div.Wrapper-ktypb-0.dzOiXP > div > div.listEmploye > div.contentListEmploye > div:nth-child(2)",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery.blocDescktop > div.equipementDetailsLeft > div.coordination.active"
-    },
-    {
-      "featureCode": "PE_ASSOC_INSPECTION",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1)"
-    },
-    {
-      "featureCode": "PE_ASSOC_WARNING",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1)"
-    },
-    {
-      "featureCode": "PE_ASSOC_CERTIFICATE",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1)"
-    },
-    {
-      "featureCode": "PE_SET_DISPLAY_LOCATION",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(4) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(4) > div:nth-child(1)"
-    },
-    {
-      "featureCode": "PE_QR_CODE_SCAN_PRINT",
-      "moduleCode": "PROCURED_EQUIP",
-      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery.blocDescktop > div.equipementDetailsLeft > div.coordination.active > div:nth-child(7)"
-    },
-    {
-      "featureCode": "PE_VALIDATE_ASSOC",
-      "moduleCode": "PROCURED_EQUIP",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "PE_RECEIVING_INSPECTION",
-      "moduleCode": "PROCURED_EQUIP",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.ModelbtnClose",
-      "cssSelectorR": "#app > div > div > div.Wrapper-ktypb-0.dzOiXP > div > div.listEmploye > div.topListEmploye.fullwidth.mb-15 > div.btnTopAction > button:nth-child(4)"
-    },
-    {
-      "featureCode": "DELIVERIES_DATA",
-      "moduleCode": "DELIVERIES",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassRight > a",
-      "clickOn3": "#app > div > div > div.Wrapper-sc-7yaxya-0.EpFVs > div > div.header.pad-0 > div:nth-child(2) > button",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-7yaxya-0.EpFVs > div > div.row > div > div > div",
-      "cssSelectorW": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft > div:nth-child(1) > div > ul > li"
-
-    },
-    {
-      "featureCode": "WAREHOUSING_SUB_EQUIP_DATA",
-      "moduleCode": "WAREHOUSING",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "#app > div > div > div.Wrapper-b2twp5-0.hGqXwa > div.contentJpass.pb-15 > div.contentJpassRight > div.contenuJpassRight > div.blocWarehousing.warehousingContainer > a.lienTitre",
-      "clickOn3": "#app > div > div > div.Wrapper-sc-1cbxzr8-0.kZPiUA > div > div.contentListEmploye > span.row.listSubEquipement > div:nth-child(2)",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.subEquipment > div.equipementDetailsLeft.warehousingDetailsLeft",
-      "clickOn4": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.subEquipment > div:nth-child(1) > span",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.subEquipment > div:nth-child(1) > div > ul > li:nth-child(2)"
-
-    },
-    {
-      "featureCode": "WAREHOUSING_EQUIP_HANDOVER",
-      "moduleCode": "WAREHOUSING",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1)",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1) > button",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div"
-    },
-    {
-      "featureCode": "WAREHOUSING_ASSOC_SUB_EQUIP_INSPECTION",
-      "moduleCode": "WAREHOUSING",
-      "clickOn1": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div"
-    },
-    {
-      "featureCode": "WAREHOUSING_ASSOC_SUB_EQUIP_WARN",
-      "moduleCode": "WAREHOUSING",
-      "clickOn1": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1) > button",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div:nth-child(3) > div:nth-child(1)",
-      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.contentEmploye > div.contenuEmployeRight > div.active > div.listcontenuEmployeRight > div"
-    },
-    {
-      "featureCode": "WAREHOUSING_QR_CODE_SCAN_PRINT",
-      "moduleCode": "WAREHOUSING",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.subEquipment > div.equipementDetailsLeft.warehousingDetailsLeft > div > div:nth-child(3)"
-    },
-    {
-      "featureCode": "RECEIVING_DATA",
-      "moduleCode": "WAREHOUSING",
-      "clickOn1": "body > div:nth-child(20) > div > div > div > div.ModelbtnClose",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "HANDOVER",
-      "moduleCode": "WAREHOUSING",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "EQUIP_CONTROL_DATA_VIZ",
-      "moduleCode": "EQUIP_CONTROL",
-      "clickOn1": "#app > div > div > header > div > div.retourDashboard > button",
-      "clickOn2": "",
-      "clickOn3": "",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeLeft.contenuMachineryLeft.Machinery.blocDescktop > div.equipementDetailsLeft > div.coordination.active"
-    },
-    {
-      "featureCode": "EQUIP_CONTROL_ASSOC_INSPECTION",
-      "moduleCode": "EQUIP_CONTROL",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(1) > div:nth-child(1)"
-    },
-    {
-      "featureCode": "EQUIP_CONTROL_ASSOC_WARN",
-      "moduleCode": "EQUIP_CONTROL",
-      "cssSelectorR": "body > div:nth-child(19) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight > div:nth-child(2) > div:nth-child(1) "
-    },
-    {
-      "featureCode": "SITE_OPENING_INITIATE",
-      "moduleCode": "SITE_OPENING",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "SITE_OPENING_FILL_EDIT",
-      "moduleCode": "SITE_OPENING",
-      "cssSelectorR": "",
-      "cssSelectorW": ""
-    },
-    {
-      "featureCode": "SITE_OPENING_VALIDATE",
-      "moduleCode": "SITE_OPENING",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "NOTIFICATION_EMAIL",
-      "moduleCode": "SITE_OPENING",
-      "cssSelectorR": ""
-    },
-    {
-      "featureCode": "PE_EQUIP_CERTS_DATA",
-      "moduleCode": "PE_CERTIFICATE",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.contentListEmploye.certificateList > div:nth-child(2)"
-    },
-    {
-      "featureCode": "PE_EQUIP_CERTS_MASSIVE_UPLOAD",
-      "moduleCode": "PE_CERTIFICATE",
-      "cssSelectorR": "#app > div > div > div.Wrapper-sc-1djan6w-0.gOkQoZ > div.listEmploye > div.topListEmploye > div.blocOption.active > ul > li"
-    }
+      "cssSelectorR": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div:nth-child(3) > div:nth-child(1)",
+      "cssSelectorW": "body > div:nth-child(20) > div > div > div > div.Wrapper-sc-11fr2s2-0.fVpjKK.contenuEmploye > div.contentEmploye > div.contenuEmployeRight.employee > div.active > div.listcontenuEmployeRight > div > div"}
   ]
 }

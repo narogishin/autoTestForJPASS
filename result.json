@@ -1,7 +1,6 @@
 {
   "JPASS_SETTINGS" : {
-    "JPASS_SETTINGS" : false,
-    "PROJECT_CONFIGURATION" : true
+    "JPASS_SETTINGS" : true
   },
   "JPASS_DASHBOARD" : {
     "DASHBOARD_EMPLOYEE_BLOCK_KPI" : true,
@@ -15,67 +14,9 @@
     "DASHBOARD_EQUIP_CONTROL_BLOCK" : true
   },
   "EMPLOYEE" : {
-    "EMPLOYEE_PERSO_DATA" : false,
-    "EMPLOYEE_QUALIF_ASSOCIATE" : false,
-    "EMPLOYEE_TRAINING_ASSOCIATE" : false,
-    "EMPLOYEE_MEDICAL_ASSOCIATE" : false,
-    "EMPLOYEE_BEHAVIOR_ASSOCIATE" : false,
-    "EMPLOYEE_VALIDATE_ASSOC" : true,
-    "EMPLOYEE_VIEW_PROJECTS" : true,
-    "EMPLOYEE_QR_CODE_SCAN_PRINT" : false,
-    "EMPLOYEE_CHECK_IN_OUT" : true
-  },
-  "TRAINING" : {
-    "TRAINING_DATA" : false
-  },
-  "QUALIFICATION" : {
-    "QUALIF_DATA" : false
-  },
-  "MEDICAL" : {
-    "MEDICAL_DATA" : false,
-    "MEDICAL_MASSIVE_UPLOAD_ASSOC" : false
-  },
-  "CONSTRUCTION_MACHINERY" : {
-    "CM_DATA" : false,
-    "CM_ASSOC_CERTIFICATE" : false,
-    "CM_ASSOC_INSPECTION" : false,
-    "CM_ASSOC_WARNING" : false,
-    "CM_ASSOC_OPERATOR" : false,
-    "CM_ASSOC_LOCALISATION" : false,
-    "CM_ASSOC_PROJECTS" : true,
-    "CM_VALIDATE_ASSOC" : true,
-    "CM_QR_CODE_SCAN_PRINT" : false
-  },
-  "CM_CERTIFICATE" : {
-    "EQUIP_CERTS_DATA" : false,
-    "EQUIP_CERTS_MASSIVE_UPLOAD" : false
-  },
-  "PE_CERTIFICATE" : {
-    "PE_EQUIP_CERTS_DATA" : true,
-    "PE_EQUIP_CERTS_MASSIVE_UPLOAD" : true
-  },
-  "PROCURED_EQUIP" : {
-    "PE_DATA" : false,
-    "PE_RECEIVING_INSPECTION" : false,
-    "PE_ASSOC_INSPECTION" : false,
-    "PE_ASSOC_WARNING" : false,
-    "PE_ASSOC_CERTIFICATE" : false,
-    "PE_VALIDATE_ASSOC" : true,
-    "PE_SET_DISPLAY_LOCATION" : false,
-    "PE_QR_CODE_SCAN_PRINT" : false
-  },
-  "DELIVERIES" : {
-    "DELIVERIES_DATA" : false
-  },
-  "EQUIP_CONTROL" : {
-    "EQUIP_CONTROL_DATA_VIZ" : false,
-    "EQUIP_CONTROL_ASSOC_INSPECTION" : false,
-    "EQUIP_CONTROL_ASSOC_WARN" : false
-  },
-  "SITE_OPENING" : {
-    "SITE_OPENING_INITIATE" : false,
-    "SITE_OPENING_FILL_EDIT" : false,
-    "SITE_OPENING_VALIDATE" : true,
-    "NOTIFICATION_EMAIL" : true
+    "EMPLOYEE_PERSO_DATA" : true,
+    "EMPLOYEE_QUALIF_ASSOCIATE" : true,
+    "EMPLOYEE_TRAINING_ASSOCIATE" : true,
+    "EMPLOYEE_MEDICAL_ASSOCIATE" : true
   }
 }

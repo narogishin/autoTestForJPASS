@@ -97,23 +97,23 @@ public class SeleniumPrivilegesCheck {
                 String clickOnKey = "clickOn" + clickOnIndex;
                 if (featureNode.has(clickOnKey)) {
                     String clickSelector = featureNode.get(clickOnKey).asText();
-                    clickElement(driver, clickSelector, true); // TEMPORARY: to check is selectors won't cause issues on clicking elements
+                    clickElement(driver, clickSelector); // TEMPORARY: to check is selectors won't cause issues on clicking elements
                 } else {
                     break; // Exit loop when no more clickOn keys are found
                 }
                 clickOnIndex++;
             }
 
-            boolean privilegeR = (cssSelectorR != null || xpathR != null) && isElementDisplayed(driver, cssSelectorR, cssSelectorR != null);
-            boolean privilegeW = (cssSelectorW != null || xpathW != null) && isElementClickable(driver, cssSelectorW, cssSelectorW != null);
-            boolean privilegeD = (cssSelectorD != null || xpathD != null) && isElementClickable(driver, cssSelectorD, cssSelectorD != null);
+            boolean privilegeR = (cssSelectorR != null || xpathR != null) && isElementDisplayed(driver, cssSelectorR, xpathR);
+            boolean privilegeW = (cssSelectorW != null || xpathW != null) && isElementClickable(driver, cssSelectorW, xpathW);
+            boolean privilegeD = (cssSelectorD != null || xpathD != null) && isElementClickable(driver, cssSelectorD, xpathD);
 
             while (true) {
 
                 String clickOffKey = "clickOff" + clickOffIndex;
                 if (featureNode.has(clickOffKey)) {
                     String clickSelector = featureNode.get(clickOffKey).asText();
-                    clickElement(driver, clickSelector, true); // TEMPORARY: to check is selectors won't cause issues on clicking elements
+                    clickElement(driver, clickSelector); // TEMPORARY: to check is selectors won't cause issues on clicking elements
                 } else {
                     break; // Exit loop when no more clickOn keys are found
                 }
@@ -144,11 +144,11 @@ public class SeleniumPrivilegesCheck {
     }
 
     // Utility method to check if an element is displayed
-    private static boolean isElementDisplayed(WebDriver driver, String cssSelector, boolean is_selector) {
+    private static boolean isElementDisplayed(WebDriver driver, String cssSelector, String xpath) {
         try {
-//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
+            WebElement element = driver.findElement(cssSelector != null ? By.cssSelector(cssSelector) : By.xpath(xpath));
             wait.until(ExpectedConditions.visibilityOf(element));
             return element.isDisplayed();
         } catch (Exception e) {
@@ -157,13 +157,13 @@ public class SeleniumPrivilegesCheck {
     }
 
 //     Utility method to check if an element is displayed
-    private static boolean isElementClickable(WebDriver driver, String cssSelector, boolean is_selector) {
+    private static boolean isElementClickable(WebDriver driver, String cssSelector, String xpath) {
         try {
-//            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
 //            wait.until(ExpectedConditions.visibilityOf(element));
-            wait.until(ExpectedConditions.elementToBeClickable(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector)));
-            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
+            wait.until(ExpectedConditions.elementToBeClickable(cssSelector != null ? By.cssSelector(cssSelector) : By.xpath(xpath)));
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebElement element = driver.findElement(cssSelector != null ? By.cssSelector(cssSelector) : By.xpath(xpath));
             return element.isEnabled();
         } catch (Exception e) {
             return false;  // Return false if the element is not found or not displayed
@@ -171,12 +171,13 @@ public class SeleniumPrivilegesCheck {
     }
 
     // Utility method to click on an element
-    private static void clickElement(WebDriver driver, String cssSelector, boolean is_selector) {
+    private static void clickElement(WebDriver driver, String cssSelector) {
         try {
-//            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-            wait.until(ExpectedConditions.elementToBeClickable(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector)));
-            WebElement element = driver.findElement(is_selector ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
+            System.out.println(cssSelector.contains(">"));
+            wait.until(ExpectedConditions.elementToBeClickable(cssSelector.contains(">") ? By.cssSelector(cssSelector) : By.xpath(cssSelector)));
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            WebElement element = driver.findElement(cssSelector.contains(">") ? By.cssSelector(cssSelector) : By.xpath(cssSelector));
             element.click();
         } catch (Exception e) {
             System.out.println("Element not found or not clickable: " + cssSelector);
